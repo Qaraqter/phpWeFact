@@ -58,6 +58,7 @@ class API
                 sprintf('CreditorCode must be defined!')
             );
         }
+
         $withCreditInvoice = "no";
 
         if ($removeCreditInvoice) {
@@ -69,6 +70,23 @@ class API
             'withcreditinvoice' => $withCreditInvoice,
         );
         return $this->sendRequest('creditor', 'delete', $parameters);
+    }
+
+    /**
+     * Edit a creditor
+     * @param  Creditor $creditor The creditor object
+     * @return array
+     */
+    public function editCreditor(Creditor $creditor)
+    {
+        if ($creditor->getCreditorCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('CreditorCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($creditor);
+        return $this->sendRequest('creditor', 'edit', $parameters);
     }
 
     /**

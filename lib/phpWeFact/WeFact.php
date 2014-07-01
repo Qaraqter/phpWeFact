@@ -89,6 +89,11 @@ class API
         return $this->sendRequest('creditor', 'edit', $parameters);
     }
 
+    /**
+     * Lists creditors with the parameters defined in $listCreditors
+     * @param  ListCreditors $listCreditors
+     * @return array
+     */
     public function listCreditors(ListCreditors $listCreditors)
     {
         $parameters = get_object_vars($listCreditors);

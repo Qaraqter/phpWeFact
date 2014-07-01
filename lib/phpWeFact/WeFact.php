@@ -89,6 +89,13 @@ class API
         return $this->sendRequest('creditor', 'edit', $parameters);
     }
 
+    public function listCreditors(ListCreditors $listCreditors)
+    {
+        $parameters = get_object_vars($listCreditors);
+        $response = $this->sendRequest('creditor', 'list', $parameters);
+        return $response;
+    }
+
     /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller

@@ -5,7 +5,6 @@ namespace phpWeFact;
 class API
 {
     private $url;
-    private $responseType;
     private $apiKey;
 
     /**
@@ -20,7 +19,7 @@ class API
 
     /**
      * Creates a Creditor
-     * @param  phpWeFact\Creditor $creditor The creditor object
+     * @param  phpWeFact\Creditor $creditor
      * @return array
      */
     public function createCreditor(Creditor $creditor)
@@ -47,7 +46,7 @@ class API
 
     /**
      * Delete a creditor
-     * @param  phpWeFact\Creditor $creditor The creditor object
+     * @param  phpWeFact\Creditor $creditor
      * @param  bool $removered [description]
      * @return array
      */
@@ -74,7 +73,7 @@ class API
 
     /**
      * Edit a creditor
-     * @param  Creditor $creditor The creditor object
+     * @param  Creditor $creditor
      * @return array
      */
     public function editCreditor(Creditor $creditor)
@@ -101,6 +100,65 @@ class API
         return $response;
     }
 
+    /**
+     * Shows the creditor info
+     * @param  Creditor $creditor
+     * @return array
+     */
+    public function showCreditor(Creditor $creditor)
+    {
+        if ($creditor->getCreditorCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('CreditorCode must be defined!')
+            );
+        }
+        $parameters = get_object_vars($creditor);
+
+        $response = $this->sendRequest('creditor', 'show', $parameters);
+
+        return $response;
+    }
+
+    /**
+     * getCreditor get's the creditor info and parses it to an Creditor object
+     * @param  Creditor $creditor
+     * @return Creditor $creditorObject
+     */
+    public function getCreditor(Creditor $creditor)
+    {
+        if ($creditor->getCreditorCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('CreditorCode must be defined!')
+            );
+        }
+        $parameters = get_object_vars($creditor);
+        $response = $this->sendRequest('creditor', 'show', $parameters);
+        $creditorObject = new Creditor();
+        $creditorObject->setCreditorCode($response['creditor']['CreditorCode'])
+        ->setCompanyName($response['creditor']['CompanyName'])
+        ->setCompanyNumber($response['creditor']['CompanyNumber'])
+        ->setTaxNumber($response['creditor']['TaxNumber'])
+        ->setSex($response['creditor']['Sex'])
+        ->setInitials($response['creditor']['Initials'])
+        ->setSurName($response['creditor']['SurName'])
+        ->setAddress($response['creditor']['Address'])
+        ->setZipCode($response['creditor']['ZipCode'])
+        ->setCity($response['creditor']['City'])
+        ->setCountry($response['creditor']['Country'])
+        ->setEmailAddress($response['creditor']['EmailAddress'])
+        ->setPhoneNumber($response['creditor']['PhoneNumber'])
+        ->setMobileNumber($response['creditor']['MobileNumber'])
+        ->setFaxNumber($response['creditor']['FaxNumber'])
+        ->setComment($response['creditor']['Comment'])
+        ->setAccountNumber($response['creditor']['AccountNumber'])
+        ->setAccountName($response['creditor']['AccountName'])
+        ->setAccountBank($response['creditor']['AccountBank'])
+        ->setAccountCity($response['creditor']['AccountCity'])
+        ->setAccountBIC($response['creditor']['AccountBIC'])
+        ->setGroups($response['creditor']['Groups']);
+
+        return $creditorObject;
+    }
     /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller

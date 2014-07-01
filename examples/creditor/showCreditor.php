@@ -9,8 +9,8 @@ $creditor = new phpWeFact\Creditor();
 For every setter look into phpWeFact\Creditor() 
 or https://www.wefact.nl/wefact-standard/apiv2/crediteuren/add
 */
-$creditor->setSex('m')->setCompanyName('Qaraqter');
+$creditor->setCreditorCode('CD0020');
 
-$result = $WeFact->createCreditor($creditor);
+$result = $WeFact->showCreditor($creditor);
 
 var_dump($result);

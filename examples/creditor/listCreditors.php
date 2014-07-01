@@ -1,6 +1,6 @@
 <?php
-include_once('../lib/phpWeFact/WeFact.php');
-include_once('../lib/phpWeFact/ListCreditors.php');
+include_once('../../lib/phpWeFact/WeFact.php');
+include_once('../../lib/phpWeFact/ListCreditors.php');
 
 $WeFact = new phpWeFact\API('API_KEY');
 $listCreditors = new phpWeFact\ListCreditors();

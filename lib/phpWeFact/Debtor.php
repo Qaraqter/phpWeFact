@@ -215,6 +215,13 @@ class Debtor extends API
     protected $CustomFields;
 
     /**
+     * Constructor of Debtor
+     */
+    public function __construct()
+    {
+    }
+
+    /**
      * Gets the value of DebtorCode.
      *
      * @return string

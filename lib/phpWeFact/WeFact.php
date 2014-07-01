@@ -217,6 +217,83 @@ class API
     }
 
     /**
+     * Shows the debtor's info
+     * @param  Debtor $debtor
+     * @return array
+     */
+    public function showDebtor(Debtor $debtor)
+    {
+        if ($debtor->getDebtorCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('DebtorCode must be defined!')
+            );
+        }
+        $parameters = get_object_vars($debtor);
+
+        $response = $this->sendRequest('debtor', 'show', $parameters);
+
+        return $response;
+    }
+
+    /**
+     * getDebtor get's the debtor's info and parses it to an Debtor object
+     * @param  Debtor $debtor
+     * @return Debtor $debtorObject
+     */
+    public function getDebtor(Debtor $debtor)
+    {
+        if ($debtor->getDebtorCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('DebtorCode must be defined!')
+            );
+        }
+        $parameters = get_object_vars($debtor);
+        $response = $this->sendRequest('debtor', 'show', $parameters);
+        $debtorObject = new Debtor();
+        $debtorObject->setDebtorCode($response['debtor']['DebtorCode'])
+        ->setCompanyName($response['debtor']['CompanyName'])
+        ->setCompanyNumber($response['debtor']['CompanyNumber'])
+        ->setLegalForm($response['debtor']['LegalForm'])
+        ->setTaxNumber($response['debtor']['TaxNumber'])
+        ->setSex($response['debtor']['Sex'])
+        ->setInitials($response['debtor']['Initials'])
+        ->setSurName($response['debtor']['SurName'])
+        ->setAddress($response['debtor']['Address'])
+        ->setZipCode($response['debtor']['ZipCode'])
+        ->setCity($response['debtor']['City'])
+        ->setCountry($response['debtor']['Country'])
+        ->setEmailAddress($response['debtor']['EmailAddress'])
+        ->setSecondEmailAddress($response['debtor']['SecondEmailAddress'])
+        ->setPhoneNumber($response['debtor']['PhoneNumber'])
+        ->setMobileNumber($response['debtor']['MobileNumber'])
+        ->setFaxNumber($response['debtor']['FaxNumber'])
+        ->setComment($response['debtor']['Comment'])
+        ->setInvoiceMethod($response['debtor']['InvoiceMethod'])
+        ->setInvoiceCompanyName($response['debtor']['InvoiceCompanyName'])
+        ->setInvoiceInitials($response['debtor']['InvoiceInitials'])
+        ->setInvoiceSurName($response['debtor']['InvoiceSurName'])
+        ->setInvoiceAddress($response['debtor']['InvoiceAddress'])
+        ->setInvoiceZipCode($response['debtor']['InvoiceZipCode'])
+        ->setInvoiceCity($response['debtor']['InvoiceCity'])
+        ->setInvoiceCountry($response['debtor']['InvoiceCountry'])
+        ->setInvoiceEmailAddress($response['debtor']['InvoiceEmailAddress'])
+        ->setInvoiceAuthorisation($response['debtor']['InvoiceAuthorisation'])
+        ->setInvoiceDataForPriceQuote($response['debtor']['InvoiceDataForPriceQuote'])
+        ->setAccountNumber($response['debtor']['AccountNumber'])
+        ->setAccountName($response['debtor']['AccountName'])
+        ->setAccountBank($response['debtor']['AccountBank'])
+        ->setAccountCity($response['debtor']['AccountCity'])
+        ->setAccountBIC($response['debtor']['AccountBIC'])
+        ->setTaxable($response['debtor']['Taxable'])
+        ->setInvoiceTerm($response['debtor']['InvoiceTerm'])
+        ->setPaymentMail($response['debtor']['PaymentMail'])
+        ->setGroups($response['debtor']['Groups'])
+        ->setCustomFields($response['debtor']['CustomFields']);
+
+        return $debtorObject;
+    }
+
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

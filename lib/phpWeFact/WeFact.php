@@ -187,6 +187,22 @@ class API
         return $this->sendRequest('debtor', 'add', $parameters);
     }
 
+    /**
+     * Edit a debitor
+     * @param  debtor $debtor
+     * @return array
+     */
+    public function editDebtor(Debtor $debtor)
+    {
+        if ($debtor->getDebtorCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('DebtorCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($debtor);
+        return $this->sendRequest('debtor', 'edit', $parameters);
+    }
 
     /**
      * Lists debtors with the parameters defined in $listParam

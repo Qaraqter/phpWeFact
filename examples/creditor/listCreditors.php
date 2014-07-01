@@ -2,7 +2,7 @@
 include_once('../../lib/phpWeFact/WeFact.php');
 include_once('../../lib/phpWeFact/ListParam.php');
 
-$WeFact = new phpWeFact\API('d28cf8b69e03c97f29601c766e6be4cf');
+$WeFact = new phpWeFact\API('API_KEY');
 $listCreditors = new phpWeFact\ListParam();
 
 /* 

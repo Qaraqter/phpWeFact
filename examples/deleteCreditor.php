@@ -15,5 +15,6 @@ $creditor->setCreditorCode('CD0001');
 We give the phpWeFact\Creditor object to deleteCreditor and decide if we want 
 to delete all associated Credit Invoices.
  */
-$deleted = $WeFact->deleteCreditor($creditor, true);
-var_dump($deleted);
+$result = $WeFact->deleteCreditor($creditor, true);
+
+var_dump($result);

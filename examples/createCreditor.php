@@ -12,4 +12,5 @@ or https://www.wefact.nl/wefact-standard/apiv2/crediteuren/add
 $creditor->setSex('m')->setCompanyName('Qaraqter');
 
 $result = $WeFact->createCreditor($creditor);
+
 var_dump($result);

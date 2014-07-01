@@ -12,4 +12,5 @@ or https://www.wefact.nl/wefact-standard/apiv2/crediteuren/add
 $creditor->setCreditorCode('CD0001')->setSex('f')->setCompanyName('Changed');
 
 $result = $WeFact->editCreditor($creditor);
+
 var_dump($result);

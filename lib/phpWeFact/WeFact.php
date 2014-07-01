@@ -19,7 +19,7 @@ class API
 
     /**
      * Creates a Creditor
-     * @param  phpWeFact\Creditor $creditor
+     * @param  Creditor $creditor
      * @return array
      */
     public function createCreditor(Creditor $creditor)
@@ -46,7 +46,7 @@ class API
 
     /**
      * Delete a creditor
-     * @param  phpWeFact\Creditor $creditor
+     * @param  Creditor $creditor
      * @param  bool $removered [description]
      * @return array
      */
@@ -89,13 +89,13 @@ class API
     }
 
     /**
-     * Lists creditors with the parameters defined in $listCreditors
-     * @param  ListCreditors $listCreditors
+     * Lists creditors with the parameters defined in $listParam
+     * @param  listParam $listParam
      * @return array
      */
-    public function listCreditors(ListCreditors $listCreditors)
+    public function listCreditors(ListParam $listParam)
     {
-        $parameters = get_object_vars($listCreditors);
+        $parameters = get_object_vars($listParam);
         $response = $this->sendRequest('creditor', 'list', $parameters);
         return $response;
     }
@@ -159,6 +159,47 @@ class API
 
         return $creditorObject;
     }
+
+    /**
+     * Creates a Debtor
+     * @param  Debtor $debtor
+     * @return array
+     */
+    public function createDebtor(Debtor $debtor)
+    {
+        $parameters = get_object_vars($debtor);
+        if ($parameters['Sex'] == '') {
+            throw new \InvalidArgumentException(
+                sprintf('Sex must be defined!')
+            );
+        }
+        if ($parameters['Sex'] != "m" && $parameters['Sex'] != "f") {
+            throw new \InvalidArgumentException(
+                sprintf('Sex should either be \'m\' or \'f\' not '. $parameters['Sex'] .'!')
+            );
+        }
+        if ($parameters['CompanyName'] == '' && $parameters['SurName'] == '') {
+            throw new \InvalidArgumentException(
+                sprintf('Either companyName or surName must be defined!')
+            );
+        }
+
+        return $this->sendRequest('debtor', 'add', $parameters);
+    }
+
+
+    /**
+     * Lists debtors with the parameters defined in $listParam
+     * @param  ListParam $listParam
+     * @return array
+     */
+    public function listDebtor(ListParam $listParam)
+    {
+        $parameters = get_object_vars($listParam);
+        $response = $this->sendRequest('debtor', 'list', $parameters);
+        return $response;
+    }
+
     /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller

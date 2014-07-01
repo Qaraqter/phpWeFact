@@ -1,7 +1,7 @@
 <?php
 namespace phpWeFact;
 
-class ListCreditors extends API
+class ListParam extends API
 {
     /**
      * @var int
@@ -39,7 +39,7 @@ class ListCreditors extends API
     protected $group;
 
     /**
-     * Constructs the ListCreditors class
+     * Constructs the ListParam class
      */
     public function __construct()
     {

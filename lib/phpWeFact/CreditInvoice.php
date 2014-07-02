@@ -6,52 +6,60 @@ class CreditInvoice extends API
     /**
      * @var string
      */
-    protected $CreditInvoiceCode;//   string  Eigen interne inkoopfactuurnummer
+    protected $CreditInvoiceCode;
 
     /**
      * @var string
      */
-    protected $InvoiceCode;// string  Factuurnummer (door crediteur)
+    protected $InvoiceCode;
 
     /**
      * @var int
      */
-    protected $Creditor;//    int De unieke ID van een crediteur
+    protected $Creditor;
 
     /**
      * @var string
      */
-    protected $CreditorCode;//   string  Het crediteurnummer
+    protected $CreditorCode;
 
     /**
      * @var DateTime
      */
-    protected $Date;//    datetime    Datum van de inkoopfactuur. Standaard: vandaag
+    protected $Date;
 
     /**
      * @var int
      */
-    protected $Term;//    int Betaaltermijn in dagen
+    protected $Term;
 
     /**
      * @var float
      */
-    protected $AmountPaid;//  float   Bedrag reeds betaald
+    protected $AmountPaid;
 
     /**
      * @var date
      */
-    protected $PayDate;// date    Datum dat inkoopfactuur betaald is
+    protected $PayDate;
 
     /**
      * @var int
      */
-    protected $Status;//  int Factuur status, zie variabelen-lijst.
+    protected $Status;
 
     /**
      * @var array
      */
-    protected $InvoiceLines;//   array   Inkoopfactuurregel:
+    protected $InvoiceLines;
+
+    /**
+     * CreditInvoice constructor
+     */
+    public function __construct()
+    {
+        $this->InvoiceLines = array ();
+    }
 
     /**
      * Gets the value of CreditInvoiceCode.
@@ -280,13 +288,27 @@ class CreditInvoice extends API
     }
 
     /**
+     * Sets the value of InvoiceLines.
+     *
+     * @param array $InvoiceLines the invoice lines 
+     *
+     * @return self
+     */
+    public function setInvoiceLines(array $invoiceLines)
+    {
+        $this->InvoiceLines = $invoiceLines;
+
+        return $this;
+    }
+
+    /**
      * Adds an instance of InvoiceLines.
      *
      * @param InvoiceLines $InvoiceLines the invoice lines 
      *
      * @return self
      */
-    public function setInvoiceLines(InvoiceLines $InvoiceLines)
+    public function addInvoiceLines(InvoiceLines $InvoiceLines)
     {
         $array = get_object_vars($InvoiceLines);
         array_push($this->InvoiceLines, $array);

@@ -299,6 +299,29 @@ class API
     }
 
     /**
+     * Adds an CreditInvoice to a creditor
+     * @param CreditInvoice $creditInvoice
+     */
+    public function addCreditInvoice(CreditInvoice $creditInvoice)
+    {
+        if ($creditInvoice->getCreditorCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('CreditorCode must be defined!')
+            );
+        }
+
+        $InvoiceLines = $creditInvoice->getInvoiceLines();
+        if (empty($InvoiceLines)) {
+            throw new \InvalidArgumentException(
+                sprintf('There must be at least one InvoiceLines object in the InvoiceLines array!')
+            );
+        }
+
+        $parameters = get_object_vars($creditInvoice);
+        return $this->sendRequest('creditinvoice', 'add', $parameters);
+    }
+
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

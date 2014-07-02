@@ -31,7 +31,12 @@ class InvoiceLines extends CreditInvoice
      */
     protected $TaxPercentage;
 
-
+    /**
+     * InvoiceLines constructor
+     */
+    public function __construct()
+    {
+    }
 
     /**
      * Gets the value of Number.

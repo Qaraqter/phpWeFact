@@ -144,19 +144,19 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1181525739"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-390155093"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1181525739" class="accordion-body collapse in">
+            <div id="namespace-390155093" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-37242423"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1196211028"></a>
                                 <a href="../namespaces/phpWeFact.html" style="margin-left: 30px; padding-left: 0">phpWeFact</a>
             </div>
-            <div id="namespace-37242423" class="accordion-body collapse ">
+            <div id="namespace-1196211028" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -211,7 +211,7 @@
                         </section>
                         <section class="row-fluid public">
                             <section class="span4">
-                                                                    <a href="../classes/phpWeFact.API.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/phpWeFact.CreditInvoice.html#method___construct" class="">__construct()</a><br />
                                                                     <a href="../classes/phpWeFact.API.html#method_createCreditor" class="">createCreditor()</a><br />
                                                                     <a href="../classes/phpWeFact.API.html#method_deleteCreditor" class="">deleteCreditor()</a><br />
                                                                     <a href="../classes/phpWeFact.API.html#method_editCreditor" class="">editCreditor()</a><br />
@@ -223,6 +223,7 @@
                                                                     <a href="../classes/phpWeFact.API.html#method_listDebtor" class="">listDebtor()</a><br />
                                                                     <a href="../classes/phpWeFact.API.html#method_showDebtor" class="">showDebtor()</a><br />
                                                                     <a href="../classes/phpWeFact.API.html#method_getDebtor" class="">getDebtor()</a><br />
+                                                                    <a href="../classes/phpWeFact.API.html#method_addCreditInvoice" class="">addCreditInvoice()</a><br />
                                                                     <a href="../classes/phpWeFact.API.html#method_sendRequest" class="">sendRequest()</a><br />
                                                                     <a href="../classes/phpWeFact.CreditInvoice.html#method_getCreditInvoiceCode" class="">getCreditInvoiceCode()</a><br />
                                                                     <a href="../classes/phpWeFact.CreditInvoice.html#method_setCreditInvoiceCode" class="">setCreditInvoiceCode()</a><br />
@@ -243,6 +244,7 @@
                                                                     <a href="../classes/phpWeFact.CreditInvoice.html#method_setStatus" class="">setStatus()</a><br />
                                                                     <a href="../classes/phpWeFact.CreditInvoice.html#method_getInvoiceLines" class="">getInvoiceLines()</a><br />
                                                                     <a href="../classes/phpWeFact.CreditInvoice.html#method_setInvoiceLines" class="">setInvoiceLines()</a><br />
+                                                                    <a href="../classes/phpWeFact.CreditInvoice.html#method_addInvoiceLines" class="">addInvoiceLines()</a><br />
                                                             </section>
                             <section class="span4">
                                                                     <em>No public properties found</em>
@@ -626,18 +628,10 @@
             <article class="method">
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(string <span class="argument">$securityKey</span>)</pre>
-                <p><em>The constructor</em></p>
+                <pre class="signature" style="margin-right: 54px;">__construct()</pre>
+                <p><em>CreditInvoice constructor</em></p>
                 
 
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td>string</td>
-                                <td>$securityKey </td>
-                                <td></td>
-                            </tr>
-                                            </table>
                 
                 
                             </article>
@@ -645,9 +639,7 @@
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
                                                             <dl>
-                                                    <dt>Inherited from</dt>
-                    <dd><a href="../classes/phpWeFact.API.html"><div class="path-wrapper">\phpWeFact\API</div></a></dd>
-                                                            </dl>
+                                                                            </dl>
             <h2>Tags</h2>
             <table class="table table-condensed">
                                     <tr><td colspan="2"><em>None found</em></td></tr>
@@ -1044,6 +1036,41 @@
                     <a href="../classes/phpWeFact.Debtor.html">\phpWeFact\Debtor</a>
                                             &mdash; <p>$debtorObject</p>
                                                 </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/phpWeFact.API.html"><div class="path-wrapper">\phpWeFact\API</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_addCreditInvoice" name="method_addCreditInvoice" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">addCreditInvoice()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">addCreditInvoice(\phpWeFact\CreditInvoice <span class="argument">$creditInvoice</span>)</pre>
+                <p><em>Adds an CreditInvoice to a creditor</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/phpWeFact.CreditInvoice.html">\phpWeFact\CreditInvoice</a></td>
+                                <td>$creditInvoice </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                            </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
@@ -1669,7 +1696,42 @@
             <article class="method">
                 <h3 class="public ">setInvoiceLines()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setInvoiceLines(\phpWeFact\InvoiceLines <span class="argument">$InvoiceLines</span>) : self</pre>
+                <pre class="signature" style="margin-right: 54px;">setInvoiceLines(array <span class="argument">$invoiceLines</span>) : self</pre>
+                <p><em>Sets the value of InvoiceLines.</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$invoiceLines </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    self
+                                                </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_addInvoiceLines" name="method_addInvoiceLines" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">addInvoiceLines()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">addInvoiceLines(\phpWeFact\InvoiceLines <span class="argument">$InvoiceLines</span>) : self</pre>
                 <p><em>Adds an instance of InvoiceLines.</em></p>
                 
 
@@ -1748,7 +1810,7 @@
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on July 2nd, 2014 at 12:21.
+                    on July 2nd, 2014 at 12:58.
                 </section>
             </section>
         </section>

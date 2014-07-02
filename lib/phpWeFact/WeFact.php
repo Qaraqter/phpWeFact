@@ -299,7 +299,7 @@ class API
     }
 
     /**
-     * Adds an CreditInvoice
+     * Adds a CreditInvoice
      * @param CreditInvoice $creditInvoice
      */
     public function addCreditInvoice(CreditInvoice $creditInvoice)
@@ -322,7 +322,7 @@ class API
     }
 
     /**
-     * Deletes an CreditInvoice
+     * Deletes a CreditInvoice
      * @param  CreditInvoice $creditInvoice
      * @return array
      */
@@ -338,6 +338,11 @@ class API
         return $this->sendRequest('creditinvoice', 'delete', $parameters);
     }
 
+    /**
+     * Edits a CreditInvoice
+     * @param  CreditInvoice $creditInvoice
+     * @return array
+     */
     public function editCreditInvoice(CreditInvoice $creditInvoice)
     {
         if ($creditInvoice->getCreditInvoiceCode() == '') {
@@ -348,6 +353,19 @@ class API
 
         $parameters = get_object_vars($creditInvoice);
         return $this->sendRequest('creditinvoice', 'edit', $parameters);
+    }
+
+
+    /**
+     * Lists CreditInvoices with the parameters defined in $listParam
+     * @param  ListParam $listParam
+     * @return array
+     */
+    public function listCreditInvoice(ListParam $listParam)
+    {
+        $parameters = get_object_vars($listParam);
+        $response = $this->sendRequest('creditinvoice', 'list', $parameters);
+        return $response;
     }
 
     /**

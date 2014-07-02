@@ -4,6 +4,11 @@ namespace phpWeFact;
 class ListParam extends API
 {
     /**
+     * @var string
+     */
+    protected $status;
+
+    /**
      * @var int
      */
     protected $offset;
@@ -209,6 +214,30 @@ class ListParam extends API
     public function setGroup($group)
     {
         $this->group = $group;
+
+        return $this;
+    }
+
+    /**
+     * Gets the value of status.
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+    
+    /**
+     * Sets the value of status.
+     *
+     * @param string $status the status 
+     *
+     * @return self
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
 
         return $this;
     }

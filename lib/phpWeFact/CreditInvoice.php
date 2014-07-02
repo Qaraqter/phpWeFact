@@ -302,13 +302,13 @@ class CreditInvoice extends API
     }
 
     /**
-     * Adds an instance of InvoiceLines.
+     * Adds an instance of InvoiceLine.
      *
-     * @param InvoiceLines $InvoiceLines the invoice lines 
+     * @param InvoiceLine $InvoiceLine the invoice lines 
      *
      * @return self
      */
-    public function addInvoiceLines(InvoiceLines $InvoiceLines)
+    public function addInvoiceLine(InvoiceLine $InvoiceLines)
     {
         $array = get_object_vars($InvoiceLines);
         array_push($this->InvoiceLines, $array);

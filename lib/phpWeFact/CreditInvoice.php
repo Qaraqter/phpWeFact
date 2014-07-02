@@ -160,7 +160,7 @@ class CreditInvoice extends API
     /**
      * Gets the value of Date.
      *
-     * @return DateTime
+     * @return string
      */
     public function getDate()
     {
@@ -170,11 +170,11 @@ class CreditInvoice extends API
     /**
      * Sets the value of Date.
      *
-     * @param DateTime $Date the date 
+     * @param string $Date the date 
      *
      * @return self
      */
-    public function setDate(DateTime $Date)
+    public function setDate($Date)
     {
         $this->Date = $Date;
 
@@ -232,7 +232,7 @@ class CreditInvoice extends API
     /**
      * Gets the value of PayDate.
      *
-     * @return date
+     * @return string
      */
     public function getPayDate()
     {
@@ -242,11 +242,11 @@ class CreditInvoice extends API
     /**
      * Sets the value of PayDate.
      *
-     * @param date $PayDate the pay date 
+     * @param string $PayDate the pay date 
      *
      * @return self
      */
-    public function setPayDate(date $PayDate)
+    public function setPayDate(string $PayDate)
     {
         $this->PayDate = $PayDate;
 

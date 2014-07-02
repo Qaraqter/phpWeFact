@@ -299,7 +299,7 @@ class API
     }
 
     /**
-     * Adds an CreditInvoice to a creditor
+     * Adds an CreditInvoice
      * @param CreditInvoice $creditInvoice
      */
     public function addCreditInvoice(CreditInvoice $creditInvoice)
@@ -321,6 +321,11 @@ class API
         return $this->sendRequest('creditinvoice', 'add', $parameters);
     }
 
+    /**
+     * Deletes an CreditInvoice
+     * @param  CreditInvoice $creditInvoice
+     * @return array
+     */
     public function deleteCreditInvoice(CreditInvoice $creditInvoice)
     {
         if ($creditInvoice->getCreditInvoiceCode() == '') {
@@ -331,6 +336,18 @@ class API
 
         $parameters = get_object_vars($creditInvoice);
         return $this->sendRequest('creditinvoice', 'delete', $parameters);
+    }
+
+    public function editCreditInvoice(CreditInvoice $creditInvoice)
+    {
+        if ($creditInvoice->getCreditInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('CreditInvoiceCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($creditInvoice);
+        return $this->sendRequest('creditinvoice', 'edit', $parameters);
     }
 
     /**

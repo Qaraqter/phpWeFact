@@ -299,7 +299,7 @@ class API
     }
 
     /**
-     * Adds a CreditInvoice
+     * Adds a credit invoice
      * @param CreditInvoice $creditInvoice
      */
     public function addCreditInvoice(CreditInvoice $creditInvoice)
@@ -322,7 +322,7 @@ class API
     }
 
     /**
-     * Deletes a CreditInvoice
+     * Deletes a credit invoice
      * @param  CreditInvoice $creditInvoice
      * @return array
      */
@@ -339,7 +339,7 @@ class API
     }
 
     /**
-     * Edits a CreditInvoice
+     * Edits a credit invoice
      * @param  CreditInvoice $creditInvoice
      * @return array
      */
@@ -357,7 +357,7 @@ class API
 
 
     /**
-     * Lists CreditInvoices with the parameters defined in $listParam
+     * Lists credit invoices with the parameters defined in $listParam
      * @param  ListParam $listParam
      * @return array
      */
@@ -366,6 +366,23 @@ class API
         $parameters = get_object_vars($listParam);
         $response = $this->sendRequest('creditinvoice', 'list', $parameters);
         return $response;
+    }
+
+    /**
+     * Marks a credit invoice as paid.
+     * @param  CreditInvoice $creditInvoice
+     * @return array
+     */
+    public function markCreditInvoiceAsPaid(CreditInvoice $creditInvoice)
+    {
+        if ($creditInvoice->getCreditInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('CreditInvoiceCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($creditInvoice);
+        return $this->sendRequest('creditinvoice', 'markaspaid', $parameters);
     }
 
     /**

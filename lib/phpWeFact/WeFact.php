@@ -409,6 +409,23 @@ class API
     }
 
     /**
+     * Returns the info of an Credit Invoice
+     * @param  CreditInvoice $creditInvoice
+     * @return array
+     */
+    public function showCreditInvoice(CreditInvoice $creditInvoice)
+    {
+        if ($creditInvoice->getCreditInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('CreditInvoiceCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($creditInvoice);
+        return $this->sendRequest('creditinvoice', 'show', $parameters);
+    }
+
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

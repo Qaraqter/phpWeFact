@@ -278,115 +278,19 @@ class CreditInvoice extends API
     {
         return $this->InvoiceLines;
     }
-    
+
     /**
-     * Sets the value of InvoiceLines.
+     * Adds an instance of InvoiceLines.
      *
-     * @param array $InvoiceLines the invoice lines 
+     * @param InvoiceLines $InvoiceLines the invoice lines 
      *
      * @return self
      */
-    public function setInvoiceLines(array $InvoiceLines)
+    public function setInvoiceLines(InvoiceLines $InvoiceLines)
     {
-        $this->InvoiceLines = $InvoiceLines;
+        $array = get_object_vars($InvoiceLines);
+        array_push($this->InvoiceLines, $array);
 
         return $this;
     }
-
-    /**
-     * Gets the value of InvoiceLinesNumber.
-     *
-     * @return int
-     */
-    public function getInvoiceLinesNumber()
-    {
-        return $this->InvoiceLines['Number'];
-    }
-    
-    /**
-     * Sets the value of InvoiceLines.
-     *
-     * @param int $number the invoice lines number
-     *
-     * @return self
-     */
-    public function setInvoiceLinesNumber($number)
-    {
-        $this->InvoiceLines['Number'] = $number;
-
-        return $this;
-    }
-
-    /**
-     * Gets the value of InvoiceLinesDescription.
-     *
-     * @return string
-     */
-    public function getInvoiceLinesDescription()
-    {
-        return $this->InvoiceLines['Description'];
-    }
-    
-    /**
-     * Sets the value of InvoiceLinesDescription.
-     *
-     * @param string $description the invoice lines description
-     *
-     * @return self
-     */
-    public function setInvoiceLinesDescription($description)
-    {
-        $this->InvoiceLines['Description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets the value of InvoiceLinesPriceExcl.
-     *
-     * @return float
-     */
-    public function getInvoiceLinesPriceExcl()
-    {
-        return $this->InvoiceLines['PriceExcl'];
-    }
-    
-    /**
-     * Sets the value of InvoiceLinesPriceExcl.
-     *
-     * @param float $PriceExcl the invoice lines PriceExcl
-     *
-     * @return self
-     */
-    public function setInvoiceLinesPriceExcl($priceExcl)
-    {
-        $this->InvoiceLines['PriceExcl'] = $priceExcl;
-
-        return $this;
-    }
-
-    /**
-     * Gets the value of InvoiceLinesTaxPercentage.
-     *
-     * @return float
-     */
-    public function getInvoiceLinesTaxPercentage()
-    {
-        return $this->InvoiceLines['TaxPercentage'];
-    }
-    
-    /**
-     * Sets the value of InvoiceLinesTaxPercentage.
-     *
-     * @param float $taxPercentage the invoice lines TaxPercentage
-     *
-     * @return self
-     */
-    public function setInvoiceLinesTaxPercentage($taxPercentage)
-    {
-        $this->InvoiceLines['TaxPercentage'] = $priceExcl;
-
-        return $this;
-    }
-
 }

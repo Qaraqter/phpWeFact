@@ -321,6 +321,18 @@ class API
         return $this->sendRequest('creditinvoice', 'add', $parameters);
     }
 
+    public function deleteCreditInvoice(CreditInvoice $creditInvoice)
+    {
+        if ($creditInvoice->getCreditInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('CreditInvoiceCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($creditInvoice);
+        return $this->sendRequest('creditinvoice', 'delete', $parameters);
+    }
+
     /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller

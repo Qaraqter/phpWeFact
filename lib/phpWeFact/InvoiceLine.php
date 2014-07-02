@@ -5,6 +5,13 @@ namespace phpWeFact;
 class InvoiceLine extends CreditInvoice
 {
     /**
+     * Identifier
+     *
+     * @var int
+     */
+    protected $Identifier;
+
+    /**
      * Quantity
      * 
      * @var float
@@ -130,6 +137,30 @@ class InvoiceLine extends CreditInvoice
     public function setTaxPercentage($TaxPercentage)
     {
         $this->TaxPercentage = $TaxPercentage;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Identifier.
+     *
+     * @return int
+     */
+    public function getIdentifier()
+    {
+        return $this->Identifier;
+    }
+    
+    /**
+     * Sets the Identifier.
+     *
+     * @param int $Identifier the identifier 
+     *
+     * @return self
+     */
+    public function setIdentifier($Identifier)
+    {
+        $this->Identifier = $Identifier;
 
         return $this;
     }

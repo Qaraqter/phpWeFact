@@ -450,6 +450,29 @@ class API
     }
 
     /**
+     * Deletes an invoice line from an EXISTING credit invoice
+     * @param  CreditInvoice $creditInvoice
+     * @return array
+     */
+    public function deleteCreditInvoiceLine(CreditInvoice $creditInvoice)
+    {
+        if ($creditInvoice->getCreditInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('CreditInvoiceCode must be defined!')
+            );
+        }
+
+        $InvoiceLines = $creditInvoice->getInvoiceLines();
+        if (empty($InvoiceLines)) {
+            throw new \InvalidArgumentException(
+                sprintf('There must be at least one InvoiceLine object in the InvoiceLines array!')
+            );
+        }
+
+        $parameters = get_object_vars($creditInvoice);
+        return $this->sendRequest('creditinvoiceline', 'delete', $parameters);
+    }
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

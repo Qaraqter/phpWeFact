@@ -173,6 +173,18 @@
         </a>
     </li>
 
+                                                                                                        <li class="method public">
+        <a href="#method_getIdentifier" title="getIdentifier :: Gets the Identifier.">
+            <span class="description">Gets the Identifier.</span><pre>getIdentifier</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setIdentifier" title="setIdentifier :: Sets the Identifier.">
+            <span class="description">Sets the Identifier.</span><pre>setIdentifier</pre>
+        </a>
+    </li>
+
                                                                                                         <li class="method public inherited">
         <a href="#method_getCreditInvoiceCode" title="getCreditInvoiceCode :: Gets the value of CreditInvoiceCode.">
             <span class="description">Gets the value of CreditInvoiceCode.</span><pre>getCreditInvoiceCode</pre>
@@ -408,6 +420,12 @@
     </li>
 
                                                                                                         <li class="method public inherited">
+        <a href="#method_deleteCreditInvoiceLine" title="deleteCreditInvoiceLine :: Deletes an invoice line from an EXISTING credit invoice">
+            <span class="description">Deletes an invoice line from an EXISTING credit invoice</span><pre>deleteCreditInvoiceLine</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
         <a href="#method_sendRequest" title="sendRequest :: sendRequest sends the request to the WeFact API">
             <span class="description">sendRequest sends the request to the WeFact API</span><pre>sendRequest</pre>
         </a>
@@ -417,11 +435,11 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -670,6 +688,56 @@
                                                                                     <div class="subelement argument">
                                                 <h4>$TaxPercentage</h4>
                                                 <code>float</code><p><p>the tax percentage</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>self</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getIdentifier"></a>
+                        <div class="element clickable method public  method_getIdentifier" data-toggle="collapse" data-target=".method_getIdentifier .collapse">
+                            <h2>Gets the Identifier.</h2>
+                            <pre>getIdentifier() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setIdentifier"></a>
+                        <div class="element clickable method public  method_setIdentifier" data-toggle="collapse" data-target=".method_setIdentifier .collapse">
+                            <h2>Sets the Identifier.</h2>
+                            <pre>setIdentifier(integer $Identifier) : self</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$Identifier</h4>
+                                                <code>integer</code><p><p>the identifier</p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -1640,6 +1708,30 @@
                                                                     </div>
                             </div>
                         </div>
+                                            <a id="method_deleteCreditInvoiceLine"></a>
+                        <div class="element clickable method public  method_deleteCreditInvoiceLine inherited" data-toggle="collapse" data-target=".method_deleteCreditInvoiceLine .collapse">
+                            <h2>Deletes an invoice line from an EXISTING credit invoice</h2>
+                            <pre>deleteCreditInvoiceLine(\phpWeFact\CreditInvoice $creditInvoice) : array</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$creditInvoice</h4>
+                                                <code><a href="../classes/phpWeFact.CreditInvoice.html">\phpWeFact\CreditInvoice</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
                                             <a id="method_sendRequest"></a>
                         <div class="element clickable method public  method_sendRequest inherited" data-toggle="collapse" data-target=".method_sendRequest .collapse">
                             <h2>sendRequest sends the request to the WeFact API</h2>
@@ -1675,6 +1767,32 @@
                     
                     
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_Identifier"> </a>
+                            <div class="element clickable property  protected property_Identifier" data-toggle="collapse" data-target=".property_Identifier .collapse">
+                                <h2>Identifier</h2>
+                                <pre>Identifier : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
                                                     <a id="property_Number"> </a>
                             <div class="element clickable property  protected property_Number" data-toggle="collapse" data-target=".property_Number .collapse">
                                 <h2>Quantity</h2>
@@ -2109,7 +2227,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 02 Jul 2014 17:49:21 +0200.<br/>
+            generated on Wed, 02 Jul 2014 17:59:28 +0200.<br/>
     </footer>
     </body>
 </html>

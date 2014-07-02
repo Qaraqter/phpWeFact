@@ -369,7 +369,7 @@ class API
     }
 
     /**
-     * Marks a credit invoice as paid.
+     * Marks a credit invoice as paid
      * @param  CreditInvoice $creditInvoice
      * @return array
      */
@@ -383,6 +383,29 @@ class API
 
         $parameters = get_object_vars($creditInvoice);
         return $this->sendRequest('creditinvoice', 'markaspaid', $parameters);
+    }
+
+    /**
+     * Add a partly payment to the credit invoice
+     * @param  CreditInvoice $creditInvoice [description]
+     * @return array
+     */
+    public function partPaymentCreditInvoice(CreditInvoice $creditInvoice)
+    {
+        if ($creditInvoice->getCreditInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('CreditInvoiceCode must be defined!')
+            );
+        }
+
+        if ($creditInvoice->getAmountPaid() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('AmountPaid must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($creditInvoice);
+        return $this->sendRequest('creditinvoice', 'partpayment', $parameters);
     }
 
     /**

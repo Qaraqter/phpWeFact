@@ -595,6 +595,22 @@ class API
     }
 
     /**
+     * Marks the invoice as unpaid
+     * @param  Invoice $invoice
+     * @return array
+     */
+    public function markInvoiceAsUnpaid(Invoice $invoice)
+    {
+        if ($invoice->getInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('InvoiceCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($invoice);
+        return $this->sendRequest('invoice', 'markasunpaid', $parameters);
+    }
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

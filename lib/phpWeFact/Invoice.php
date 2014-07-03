@@ -649,9 +649,6 @@ class Invoice
 
     /**
      * Gets the The invoice method
-0 = by email
-1 = by mail
-3 = by post and mail.
      *
      * @return int
      */
@@ -662,9 +659,9 @@ class Invoice
     
     /**
      * Sets the The invoice method
-0 = by email
-1 = by mail
-3 = by post and mail.
+     *   0 = by email
+     *   1 = by mail
+     *   3 = by post and mail.
      *
      * @param int $InvoiceMethod the invoice method 
      *
@@ -823,8 +820,6 @@ class Invoice
 
     /**
      * Gets the Authorization for direct debit
-This can either be 'yes' or 'no' by default it will be the debtors
-preference.
      *
      * @return string
      */
@@ -835,8 +830,8 @@ preference.
     
     /**
      * Sets the Authorization for direct debit
-This can either be 'yes' or 'no' by default it will be the debtors
-preference.
+     * This can either be 'yes' or 'no' by default it will be the debtors
+     * preference.
      *
      * @param string $Authorisation the authorisation 
      *
@@ -851,7 +846,6 @@ preference.
 
     /**
      * Gets the The payment method
-Can be 'wire', 'auth', 'paypal', 'ideal' or 'other'.
      *
      * @return string
      */
@@ -862,7 +856,7 @@ Can be 'wire', 'auth', 'paypal', 'ideal' or 'other'.
     
     /**
      * Sets the The payment method
-Can be 'wire', 'auth', 'paypal', 'ideal' or 'other'.
+     * Can be 'wire', 'auth', 'paypal', 'ideal' or 'other'.
      *
      * @param string $PaymentMethod the payment method 
      *
@@ -973,8 +967,6 @@ Can be 'wire', 'auth', 'paypal', 'ideal' or 'other'.
 
     /**
      * Gets the The invoice status
-This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
-8 for not accepted.
      *
      * @return int
      */
@@ -985,8 +977,8 @@ This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
     
     /**
      * Sets the The invoice status
-This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
-8 for not accepted.
+     *This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
+     *8 for not accepted.
      *
      * @param int $Status the status 
      *
@@ -1019,6 +1011,21 @@ This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
     public function setInvoiceLines(array $InvoiceLines)
     {
         $this->InvoiceLines = $InvoiceLines;
+
+        return $this;
+    }
+
+    /**
+     * Adds an instance of InvoiceLine.
+     *
+     * @param InvoiceLine $InvoiceLine the credit invoice lines 
+     *
+     * @return self
+     */
+    public function addInvoiceLine(InvoiceLine $InvoiceLines)
+    {
+        $array = get_object_vars($InvoiceLines);
+        array_push($this->InvoiceLines, $array);
 
         return $this;
     }

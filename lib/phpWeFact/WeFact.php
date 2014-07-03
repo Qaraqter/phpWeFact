@@ -472,6 +472,30 @@ class API
         $parameters = get_object_vars($creditInvoice);
         return $this->sendRequest('creditinvoiceline', 'delete', $parameters);
     }
+
+    /**
+     * Adds an invoice
+     * @param Invoice $invoice
+     */
+    public function addInvoice(Invoice $invoice)
+    {
+        if ($invoice->getDebtorCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('DebtorCode must be defined!')
+            );
+        }
+
+        $InvoiceLines = $invoice->getInvoiceLines();
+        if (empty($InvoiceLines)) {
+            throw new \InvalidArgumentException(
+                sprintf('There must be at least one InvoiceLine object in the InvoiceLines array!')
+            );
+        }
+
+        $parameters = get_object_vars($invoice);
+        return $this->sendRequest('invoice', 'add', $parameters);
+    }
+
     /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller

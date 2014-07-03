@@ -2,7 +2,7 @@
 
 namespace phpWeFact;
 
-class Invoice
+class Invoice extends API
 {
     /**
      * The invoice code
@@ -215,7 +215,7 @@ class Invoice
      */
     public function __construct()
     {
-        $InvoiceLines = array();
+        $this->InvoiceLines = array();
     }
 
     /**

@@ -564,6 +564,19 @@ class API
         $parameters = get_object_vars($invoice);
         return $this->sendRequest('invoice', 'edit', $parameters);
     }
+
+    /**
+     * Lists invoices with the parameters defined in $listParam
+     * @param  ListParam $listParam
+     * @return array
+     */
+    public function listInvoice(ListParam $listParam)
+    {
+        $parameters = get_object_vars($listParam);
+        $response = $this->sendRequest('invoice', 'list', $parameters);
+        return $response;
+    }
+
     /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller

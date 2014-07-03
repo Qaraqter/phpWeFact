@@ -2,7 +2,7 @@
 
 namespace phpWeFact;
 
-class InvoiceLine extends CreditInvoice
+class CreditInvoiceLine extends CreditInvoice
 {
     /**
      * Identifier

@@ -1,11 +1,11 @@
 <?php
 include_once('../../lib/phpWeFact/WeFact.php');
 include_once('../../lib/phpWeFact/CreditInvoice.php');
-include_once('../../lib/phpWeFact/InvoiceLine.php');
+include_once('../../lib/phpWeFact/CreditInvoiceLine.php');
 $WeFact = new phpWeFact\API('API_KEY');
 
 $creditInvoice = new phpWeFact\CreditInvoice();
-$invoiceLine = new phpWeFact\InvoiceLine();
+$invoiceLine = new phpWeFact\CreditInvoiceLine();
 
 $invoiceLine->setIdentifier('15');
 

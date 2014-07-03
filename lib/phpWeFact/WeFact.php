@@ -515,13 +515,30 @@ class API
     }
 
     /**
+     * Deletes an invoice
+     * @param  Invoice $invoice
+     * @return array
+     */
+    public function deleteInvoice(Invoice $invoice)
+    {
+        if ($invoice->getInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('InvoiceCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($invoice);
+        return $this->sendRequest('invoice', 'delete', $parameters);
+    }
+
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action
      * @param  array $params
      * @return array
      */
-    public function sendRequest($controller, $action, array $params)
+    private function sendRequest($controller, $action, array $params)
     {
         
         if (is_array($params)) {

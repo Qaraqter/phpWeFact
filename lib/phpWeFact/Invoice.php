@@ -210,6 +210,9 @@ class Invoice
      */
     protected $InvoiceLines;
 
+    /**
+     * The constructor
+     */
     public function __construct()
     {
         $InvoiceLines = array();

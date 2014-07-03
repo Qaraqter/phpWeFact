@@ -476,6 +476,7 @@ class API
     /**
      * Adds an invoice
      * @param Invoice $invoice
+     * @return array
      */
     public function addInvoice(Invoice $invoice)
     {
@@ -494,6 +495,23 @@ class API
 
         $parameters = get_object_vars($invoice);
         return $this->sendRequest('invoice', 'add', $parameters);
+    }
+
+    /**
+     * Credits an invoice
+     * @param  Invoice $invoice
+     * @return array
+     */
+    public function creditInvoice(Invoice $invoice)
+    {
+        if ($invoice->getInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('InvoiceCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($invoice);
+        return $this->sendRequest('invoice', 'credit', $parameters);
     }
 
     /**

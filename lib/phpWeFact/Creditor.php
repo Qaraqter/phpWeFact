@@ -118,6 +118,7 @@ class Creditor extends API
      */
     public function __construct()
     {
+        $this->groups = array();
     }
 
     /**

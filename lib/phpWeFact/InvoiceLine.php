@@ -68,7 +68,7 @@ class InvoiceLine extends Invoice
     /**
      * The period
      *
-     * This can be d for dailey, w for week, m for month, k for quarter,
+     * This can be d for daily, w for week, m for month, k for quarter,
      * h for half a year, j for a year and t for two years.
      * @var string
      */

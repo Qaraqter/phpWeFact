@@ -610,6 +610,30 @@ class API
         $parameters = get_object_vars($invoice);
         return $this->sendRequest('invoice', 'markasunpaid', $parameters);
     }
+
+    /**
+     * Add a partly payment to the invoice
+     * @param  Invoice $invoice
+     * @return array
+     */
+    public function partPaymentInvoice(Invoice $invoice)
+    {
+        if ($invoice->getInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('InvoiceCode must be defined!')
+            );
+        }
+
+        if ($invoice->getAmountPaid() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('AmountPaid must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($invoice);
+        return $this->sendRequest('invoice', 'partpayment', $parameters);
+    }
+
     /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller

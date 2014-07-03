@@ -251,6 +251,18 @@
         </a>
     </li>
 
+                                                                                                        <li class="method public">
+        <a href="#method_getIdentifier" title="getIdentifier :: Gets the Identifier.">
+            <span class="description">Gets the Identifier.</span><pre>getIdentifier</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_setIdentifier" title="setIdentifier :: Sets the Identifier.">
+            <span class="description">Sets the Identifier.</span><pre>setIdentifier</pre>
+        </a>
+    </li>
+
                                                                                                         <li class="method public inherited">
         <a href="#method___construct" title="__construct :: The constructor">
             <span class="description">The constructor</span><pre>__construct</pre>
@@ -646,8 +658,8 @@ This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
     </li>
 
                                                                                                         <li class="method public inherited">
-        <a href="#method_addInvoiceLine" title="addInvoiceLine :: Adds an instance of InvoiceLine.">
-            <span class="description">Adds an instance of InvoiceLine.</span><pre>addInvoiceLine</pre>
+        <a href="#method_addInvoiceLine" title="addInvoiceLine :: Adds a invoice line to an EXISTING invoice">
+            <span class="description">Adds a invoice line to an EXISTING invoice</span><pre>addInvoiceLine</pre>
         </a>
     </li>
 
@@ -843,15 +855,21 @@ This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
         </a>
     </li>
 
+                                                                                                        <li class="method public inherited">
+        <a href="#method_deleteInvoiceLine" title="deleteInvoiceLine :: Deletes an invoice line from an EXISTING invoice">
+            <span class="description">Deletes an invoice line from an EXISTING invoice</span><pre>deleteInvoiceLine</pre>
+        </a>
+    </li>
+
                                                                                                         </ul>
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="method private inherited">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method private inherited">
                             <a href="#method_sendRequest" title="sendRequest :: sendRequest sends the request to the WeFact API">
                                 <span class="description">sendRequest sends the request to the WeFact API</span><pre>sendRequest</pre>
                             </a>
@@ -1426,6 +1444,56 @@ This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
                                                                                     <div class="subelement argument">
                                                 <h4>$StartPeriod</h4>
                                                 <code>string</code><p><p>the start period</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>self</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_getIdentifier"></a>
+                        <div class="element clickable method public  method_getIdentifier" data-toggle="collapse" data-target=".method_getIdentifier .collapse">
+                            <h2>Gets the Identifier.</h2>
+                            <pre>getIdentifier() : integer</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>integer</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
+                                            <a id="method_setIdentifier"></a>
+                        <div class="element clickable method public  method_setIdentifier" data-toggle="collapse" data-target=".method_setIdentifier .collapse">
+                            <h2>Sets the Identifier.</h2>
+                            <pre>setIdentifier(integer $Identifier) : self</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$Identifier</h4>
+                                                <code>integer</code><p><p>the identifier</p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -3020,8 +3088,8 @@ This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
                         </div>
                                             <a id="method_addInvoiceLine"></a>
                         <div class="element clickable method public  method_addInvoiceLine inherited" data-toggle="collapse" data-target=".method_addInvoiceLine .collapse">
-                            <h2>Adds an instance of InvoiceLine.</h2>
-                            <pre>addInvoiceLine(\phpWeFact\InvoiceLine $InvoiceLines) : self</pre>
+                            <h2>Adds a invoice line to an EXISTING invoice</h2>
+                            <pre>addInvoiceLine(\phpWeFact\Invoice $invoice) : array</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
                             <div class="row collapse">
@@ -3033,12 +3101,12 @@ This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
 
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
-                                                <h4>$InvoiceLines</h4>
-                                                <code><a href="../classes/phpWeFact.InvoiceLine.html">\phpWeFact\InvoiceLine</a></code><p></p>
+                                                <h4>$invoice</h4>
+                                                <code><a href="../classes/phpWeFact.Invoice.html">\phpWeFact\Invoice</a></code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>self</code><p></p>
+                                        <code>array</code><p></p>
                                                                     </div>
                             </div>
                         </div>
@@ -3819,6 +3887,30 @@ This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
                                                                     </div>
                             </div>
                         </div>
+                                            <a id="method_deleteInvoiceLine"></a>
+                        <div class="element clickable method public  method_deleteInvoiceLine inherited" data-toggle="collapse" data-target=".method_deleteInvoiceLine .collapse">
+                            <h2>Deletes an invoice line from an EXISTING invoice</h2>
+                            <pre>deleteInvoiceLine(\phpWeFact\Invoice $invoice) : array</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$invoice</h4>
+                                                <code><a href="../classes/phpWeFact.Invoice.html">\phpWeFact\Invoice</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+                        </div>
                                             <a id="method_sendRequest"></a>
                         <div class="element clickable method private  method_sendRequest inherited" data-toggle="collapse" data-target=".method_sendRequest .collapse">
                             <h2>sendRequest sends the request to the WeFact API</h2>
@@ -3854,6 +3946,32 @@ This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
                     
                     
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_Identifier"> </a>
+                            <div class="element clickable property  protected property_Identifier" data-toggle="collapse" data-target=".property_Identifier .collapse">
+                                <h2>Identifier</h2>
+                                <pre>Identifier : integer</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
                                                     <a id="property_Date"> </a>
                             <div class="element clickable property  protected property_Date inherited" data-toggle="collapse" data-target=".property_Date .collapse">
                                 <h2>The date of the invoice</h2>
@@ -5025,7 +5143,7 @@ This can be 0 for concept, 2 for sent, 3 for accepted, 4 for created,
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Thu, 03 Jul 2014 16:21:09 +0200.<br/>
+            generated on Thu, 03 Jul 2014 16:38:43 +0200.<br/>
     </footer>
     </body>
 </html>

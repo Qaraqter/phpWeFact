@@ -703,6 +703,30 @@ class API
     }
 
     /**
+     * Adds a invoice line to an EXISTING invoice
+     * @param Invoice $invoice
+     * @return  array
+     */
+    public function addInvoiceLine(Invoice $invoice)
+    {
+        if ($invoice->getInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('InvoiceCode must be defined!')
+            );
+        }
+
+        $InvoiceLines = $invoice->getInvoiceLines();
+        if (empty($InvoiceLines)) {
+            throw new \InvalidArgumentException(
+                sprintf('There must be at least one InvoiceLine object in the InvoiceLines array!')
+            );
+        }
+
+        $parameters = get_object_vars($invoice);
+        return $this->sendRequest('invoiceline', 'add', $parameters);
+    }
+
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

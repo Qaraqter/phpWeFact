@@ -5,6 +5,13 @@ namespace phpWeFact;
 class InvoiceLine extends Invoice
 {
     /**
+     * Identifier
+     *
+     * @var int
+     */
+    protected $Identifier;
+
+    /**
      * The date
      * @var string
      */
@@ -333,6 +340,30 @@ class InvoiceLine extends Invoice
     public function setStartPeriod($StartPeriod)
     {
         $this->StartPeriod = $StartPeriod;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Identifier.
+     *
+     * @return int
+     */
+    public function getIdentifier()
+    {
+        return $this->Identifier;
+    }
+    
+    /**
+     * Sets the Identifier.
+     *
+     * @param int $Identifier the identifier 
+     *
+     * @return self
+     */
+    public function setIdentifier($Identifier)
+    {
+        $this->Identifier = $Identifier;
 
         return $this;
     }

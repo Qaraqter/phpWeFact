@@ -699,7 +699,7 @@ class API
         }
 
         $parameters = get_object_vars($invoice);
-        return $this->sendRequest('invoice', 'sendsummationbyemail', $parameters);
+        return $this->sendRequest('invoice', 'show', $parameters);
     }
 
     /**

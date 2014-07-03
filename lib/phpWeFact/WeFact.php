@@ -578,6 +578,23 @@ class API
     }
 
     /**
+     * Marks the invoice as paid
+     * @param  Invoice $invoice
+     * @return array
+     */
+    public function markInvoiceAsPaid(Invoice $invoice)
+    {
+        if ($invoice->getInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('InvoiceCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($invoice);
+        return $this->sendRequest('invoice', 'markaspaid', $parameters);
+    }
+
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

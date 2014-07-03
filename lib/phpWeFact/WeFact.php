@@ -668,6 +668,24 @@ class API
         return $this->sendRequest('invoice', 'sendreminderbyemail', $parameters);
     }
 
+    /**
+     * Send an invoice summation by email
+     * @param  Invoice $invoice
+     * @return array
+     */
+    public function sendInvoiceSummationByEmail(Invoice $invoice)
+    {
+        if ($invoice->getInvoiceCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('InvoiceCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($invoice);
+        return $this->sendRequest('invoice', 'sendsummationbyemail', $parameters);
+    }
+
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

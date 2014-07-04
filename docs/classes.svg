@@ -33,28 +33,28 @@
 </g>
 <!-- \\phpWeFact\\CreditInvoice -->
 <g id="node3" class="node"><title>\\phpWeFact\\CreditInvoice</title>
-<polygon fill="none" stroke="black" points="236,-114 150,-114 150,-78 236,-78 236,-114"/>
-<text text-anchor="middle" x="193" y="-93.1" font-family="Times Roman,serif" font-size="11.00">CreditInvoice</text>
+<polygon fill="none" stroke="black" points="236,-60 150,-60 150,-24 236,-24 236,-60"/>
+<text text-anchor="middle" x="193" y="-39.1" font-family="Times Roman,serif" font-size="11.00">CreditInvoice</text>
 </g>
 <!-- \\phpWeFact\\API -->
-<g id="node9" class="node"><title>\\phpWeFact\\API</title>
+<g id="node10" class="node"><title>\\phpWeFact\\API</title>
 <polygon fill="none" stroke="black" points="78,-195 24,-195 24,-159 78,-159 78,-195"/>
 <text text-anchor="middle" x="51" y="-174.1" font-family="Times Roman,serif" font-size="11.00">API</text>
 </g>
 <!-- \\phpWeFact\\CreditInvoice&#45;&gt;\\phpWeFact\\API -->
 <g id="edge4" class="edge"><title>\\phpWeFact\\CreditInvoice&#45;&gt;\\phpWeFact\\API</title>
-<path fill="none" stroke="black" d="M161.132,-114.178C139.187,-126.696 109.989,-143.351 87.1705,-156.368"/>
-<polygon fill="none" stroke="black" points="85.4047,-153.345 78.4526,-161.34 88.8731,-159.426 85.4047,-153.345"/>
+<path fill="none" stroke="black" d="M161.763,-60.2106C157.684,-62.9894 153.657,-65.9526 150,-69 120.068,-93.9452 90.5088,-127.708 71.5943,-150.804"/>
+<polygon fill="none" stroke="black" points="68.6978,-148.819 65.1265,-158.794 74.1387,-153.223 68.6978,-148.819"/>
 </g>
 <!-- \\phpWeFact\\Invoice -->
 <g id="node4" class="node"><title>\\phpWeFact\\Invoice</title>
-<polygon fill="none" stroke="black" points="220,-168 166,-168 166,-132 220,-132 220,-168"/>
-<text text-anchor="middle" x="193" y="-147.1" font-family="Times Roman,serif" font-size="11.00">Invoice</text>
+<polygon fill="none" stroke="black" points="220,-114 166,-114 166,-78 220,-78 220,-114"/>
+<text text-anchor="middle" x="193" y="-93.1" font-family="Times Roman,serif" font-size="11.00">Invoice</text>
 </g>
 <!-- \\phpWeFact\\Invoice&#45;&gt;\\phpWeFact\\API -->
 <g id="edge6" class="edge"><title>\\phpWeFact\\Invoice&#45;&gt;\\phpWeFact\\API</title>
-<path fill="none" stroke="black" d="M165.957,-155.142C143.989,-159.319 112.765,-165.256 88.4009,-169.889"/>
-<polygon fill="none" stroke="black" points="87.5965,-166.479 78.4263,-171.785 88.9041,-173.356 87.5965,-166.479"/>
+<path fill="none" stroke="black" d="M165.957,-111.426C143.694,-124.125 111.927,-142.246 87.4258,-156.222"/>
+<polygon fill="none" stroke="black" points="85.3784,-153.36 78.4263,-161.355 88.8467,-159.441 85.3784,-153.36"/>
 </g>
 <!-- \\phpWeFact\\Debtor -->
 <g id="node5" class="node"><title>\\phpWeFact\\Debtor</title>
@@ -76,45 +76,45 @@
 <path fill="none" stroke="black" d="M162.885,-240.822C140.749,-228.195 110.569,-210.98 87.1323,-197.611"/>
 <polygon fill="none" stroke="black" points="88.6104,-194.424 78.19,-192.51 85.142,-200.505 88.6104,-194.424"/>
 </g>
-<!-- \\phpWeFact\\ListParam -->
-<g id="node7" class="node"><title>\\phpWeFact\\ListParam</title>
-<polygon fill="none" stroke="black" points="228,-222 158,-222 158,-186 228,-186 228,-222"/>
-<text text-anchor="middle" x="193" y="-201.1" font-family="Times Roman,serif" font-size="11.00">ListParam</text>
-</g>
-<!-- \\phpWeFact\\ListParam&#45;&gt;\\phpWeFact\\API -->
-<g id="edge12" class="edge"><title>\\phpWeFact\\ListParam&#45;&gt;\\phpWeFact\\API</title>
-<path fill="none" stroke="black" d="M157.167,-197.187C136.127,-193.186 109.573,-188.137 88.2854,-184.089"/>
-<polygon fill="none" stroke="black" points="88.7833,-180.622 78.3055,-182.192 87.4757,-187.498 88.7833,-180.622"/>
-</g>
-<!-- \\phpWeFact\\InvoiceLine -->
-<g id="node8" class="node"><title>\\phpWeFact\\InvoiceLine</title>
-<polygon fill="none" stroke="black" points="399,-168 325,-168 325,-132 399,-132 399,-168"/>
-<text text-anchor="middle" x="362" y="-147.1" font-family="Times Roman,serif" font-size="11.00">InvoiceLine</text>
-</g>
-<!-- \\phpWeFact\\InvoiceLine&#45;&gt;\\phpWeFact\\Invoice -->
-<g id="edge14" class="edge"><title>\\phpWeFact\\InvoiceLine&#45;&gt;\\phpWeFact\\Invoice</title>
-<path fill="none" stroke="black" d="M324.493,-150C296.469,-150 258.334,-150 230.348,-150"/>
-<polygon fill="none" stroke="black" points="230.162,-146.5 220.162,-150 230.162,-153.5 230.162,-146.5"/>
-</g>
-<!-- \\phpWeFact\\CreditInvoiceLine -->
-<g id="node10" class="node"><title>\\phpWeFact\\CreditInvoiceLine</title>
-<polygon fill="none" stroke="black" points="415,-114 309,-114 309,-78 415,-78 415,-114"/>
-<text text-anchor="middle" x="362" y="-93.1" font-family="Times Roman,serif" font-size="11.00">CreditInvoiceLine</text>
-</g>
-<!-- \\phpWeFact\\CreditInvoiceLine&#45;&gt;\\phpWeFact\\CreditInvoice -->
-<g id="edge16" class="edge"><title>\\phpWeFact\\CreditInvoiceLine&#45;&gt;\\phpWeFact\\CreditInvoice</title>
-<path fill="none" stroke="black" d="M308.063,-96C288.238,-96 265.819,-96 246.071,-96"/>
-<polygon fill="none" stroke="black" points="246.016,-92.5001 236.016,-96 246.016,-99.5001 246.016,-92.5001"/>
-</g>
 <!-- \\phpWeFact\\Product -->
-<g id="node11" class="node"><title>\\phpWeFact\\Product</title>
-<polygon fill="none" stroke="black" points="222,-60 164,-60 164,-24 222,-24 222,-60"/>
-<text text-anchor="middle" x="193" y="-39.1" font-family="Times Roman,serif" font-size="11.00">Product</text>
+<g id="node7" class="node"><title>\\phpWeFact\\Product</title>
+<polygon fill="none" stroke="black" points="222,-222 164,-222 164,-186 222,-186 222,-222"/>
+<text text-anchor="middle" x="193" y="-201.1" font-family="Times Roman,serif" font-size="11.00">Product</text>
 </g>
 <!-- \\phpWeFact\\Product&#45;&gt;\\phpWeFact\\API -->
-<g id="edge18" class="edge"><title>\\phpWeFact\\Product&#45;&gt;\\phpWeFact\\API</title>
-<path fill="none" stroke="black" d="M163.124,-59.2913C158.584,-62.332 154.063,-65.614 150,-69 120.068,-93.9452 90.5088,-127.708 71.5943,-150.804"/>
-<polygon fill="none" stroke="black" points="68.6978,-148.819 65.1265,-158.794 74.1387,-153.223 68.6978,-148.819"/>
+<g id="edge12" class="edge"><title>\\phpWeFact\\Product&#45;&gt;\\phpWeFact\\API</title>
+<path fill="none" stroke="black" d="M163.232,-198.34C141.413,-194.191 111.642,-188.531 88.2456,-184.082"/>
+<polygon fill="none" stroke="black" points="88.8017,-180.625 78.3239,-182.195 87.494,-187.502 88.8017,-180.625"/>
+</g>
+<!-- \\phpWeFact\\ListParam -->
+<g id="node8" class="node"><title>\\phpWeFact\\ListParam</title>
+<polygon fill="none" stroke="black" points="228,-168 158,-168 158,-132 228,-132 228,-168"/>
+<text text-anchor="middle" x="193" y="-147.1" font-family="Times Roman,serif" font-size="11.00">ListParam</text>
+</g>
+<!-- \\phpWeFact\\ListParam&#45;&gt;\\phpWeFact\\API -->
+<g id="edge14" class="edge"><title>\\phpWeFact\\ListParam&#45;&gt;\\phpWeFact\\API</title>
+<path fill="none" stroke="black" d="M157.167,-156.813C136.127,-160.814 109.573,-165.863 88.2854,-169.911"/>
+<polygon fill="none" stroke="black" points="87.4757,-166.502 78.3055,-171.808 88.7833,-173.378 87.4757,-166.502"/>
+</g>
+<!-- \\phpWeFact\\InvoiceLine -->
+<g id="node9" class="node"><title>\\phpWeFact\\InvoiceLine</title>
+<polygon fill="none" stroke="black" points="399,-114 325,-114 325,-78 399,-78 399,-114"/>
+<text text-anchor="middle" x="362" y="-93.1" font-family="Times Roman,serif" font-size="11.00">InvoiceLine</text>
+</g>
+<!-- \\phpWeFact\\InvoiceLine&#45;&gt;\\phpWeFact\\Invoice -->
+<g id="edge16" class="edge"><title>\\phpWeFact\\InvoiceLine&#45;&gt;\\phpWeFact\\Invoice</title>
+<path fill="none" stroke="black" d="M324.493,-96C296.469,-96 258.334,-96 230.348,-96"/>
+<polygon fill="none" stroke="black" points="230.162,-92.5001 220.162,-96 230.162,-99.5001 230.162,-92.5001"/>
+</g>
+<!-- \\phpWeFact\\CreditInvoiceLine -->
+<g id="node11" class="node"><title>\\phpWeFact\\CreditInvoiceLine</title>
+<polygon fill="none" stroke="black" points="415,-60 309,-60 309,-24 415,-24 415,-60"/>
+<text text-anchor="middle" x="362" y="-39.1" font-family="Times Roman,serif" font-size="11.00">CreditInvoiceLine</text>
+</g>
+<!-- \\phpWeFact\\CreditInvoiceLine&#45;&gt;\\phpWeFact\\CreditInvoice -->
+<g id="edge18" class="edge"><title>\\phpWeFact\\CreditInvoiceLine&#45;&gt;\\phpWeFact\\CreditInvoice</title>
+<path fill="none" stroke="black" d="M308.063,-42C288.238,-42 265.819,-42 246.071,-42"/>
+<polygon fill="none" stroke="black" points="246.016,-38.5001 236.016,-42 246.016,-45.5001 246.016,-38.5001"/>
 </g>
 </g>
 </svg>

@@ -751,6 +751,33 @@ class API
     }
 
     /**
+     * Adds a product
+     * @param Product $product
+     * @return  array
+     */
+    public function addProduct(Product $product)
+    {
+        if ($product->getProductName() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('ProductName must be defined!')
+            );
+        }
+        if ($product->getProductKeyPhrase() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('ProductKeyPhrase must be defined!')
+            );
+        }
+        if ($product->getPriceExcl() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('PriceExcl must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($product);
+        return $this->sendRequest('product', 'add', $parameters);
+    }
+
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

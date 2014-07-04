@@ -824,6 +824,23 @@ class API
     }
 
     /**
+     * Shows the products information
+     * @param  Product $product
+     * @return array
+     */
+    public function showProduct(Product $product)
+    {
+        if ($invoice->getProductCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('ProductCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($product);
+        return $this->sendRequest('product', 'show', $parameters);
+    }
+
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

@@ -777,6 +777,18 @@ class API
         return $this->sendRequest('product', 'add', $parameters);
     }
 
+    public function deleteProduct(Product $product)
+    {
+        if ($product->getProductCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('ProductCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($product);
+        return $this->sendRequest('product', 'delete', $parameters);
+    }
+
     /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller

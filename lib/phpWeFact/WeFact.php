@@ -753,7 +753,7 @@ class API
     /**
      * Adds a product
      * @param Product $product
-     * @return  array
+     * @return array
      */
     public function addProduct(Product $product)
     {
@@ -777,6 +777,11 @@ class API
         return $this->sendRequest('product', 'add', $parameters);
     }
 
+    /**
+     * Deletes a product
+     * @param  Product $product
+     * @return array
+     */
     public function deleteProduct(Product $product)
     {
         if ($product->getProductCode() == '') {
@@ -787,6 +792,23 @@ class API
 
         $parameters = get_object_vars($product);
         return $this->sendRequest('product', 'delete', $parameters);
+    }
+
+    /**
+     * [editProduct description]
+     * @param  Product $product
+     * @return array
+     */
+    public function editProduct(Product $product)
+    {
+        if ($product->getProductCode() == '') {
+            throw new \InvalidArgumentException(
+                sprintf('ProductCode must be defined!')
+            );
+        }
+
+        $parameters = get_object_vars($product);
+        return $this->sendRequest('product', 'edit', $parameters);
     }
 
     /**

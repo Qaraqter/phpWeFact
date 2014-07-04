@@ -1,12 +1,12 @@
 <?php
 include_once('../../lib/phpWeFact/WeFact.php');
-include_once('../../lib/phpWeFact/Product.php');
+include_once('../../lib/phpWeFact/ListParam.php');
 $WeFact = new phpWeFact\API('API_KEY');
 
-$product = new phpWeFact\Product();
+$list = new phpWeFact\ListParam();
 
-$product->setsearchfor('invoice');
+$list->setSearchfor('invoice');
 
-$result = $WeFact->listProduct($product);
+$result = $WeFact->listProduct($list);
 
 var_dump($result);

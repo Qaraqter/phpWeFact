@@ -830,7 +830,7 @@ class API
      */
     public function showProduct(Product $product)
     {
-        if ($invoice->getProductCode() == '') {
+        if ($product->getProductCode() == '') {
             throw new \InvalidArgumentException(
                 sprintf('ProductCode must be defined!')
             );

@@ -812,6 +812,18 @@ class API
     }
 
     /**
+     * Lists products by paremeters defined in ListParam
+     * @param  ListParam $listParam
+     * @return array
+     */
+    public function listProduct(ListParam $listParam)
+    {
+        $parameters = get_object_vars($listParam);
+        $response = $this->sendRequest('product', 'list', $parameters);
+        return $response;
+    }
+
+    /**
      * sendRequest sends the request to the WeFact API
      * @param  string $controller
      * @param  string $action

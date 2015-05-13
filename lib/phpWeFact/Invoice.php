@@ -210,6 +210,10 @@ class Invoice extends API
      */
     protected $InvoiceLines;
 
+    /**
+     * Ignore the discount 0 is false, 1 is true;
+     */
+    private $ignoreDiscount = 0;
 
     /**
      * The constructor
@@ -991,6 +995,26 @@ class Invoice extends API
     public function setStatus($Status)
     {
         $this->Status = $Status;
+
+        return $this;
+    }
+
+    /**
+     * Gets the boolean set to ignore the discount module
+     * @return int
+     */
+    public function getIgnoreDiscount()
+    {
+        return $this->ignoreDiscount;
+    }
+
+    /**
+     * Sets the boolean to ignore the discount module
+     * @param bool $enable
+     */
+    public function setIgnoreDiscount(bool $enable)
+    {
+        $this->ignoreDiscount = (int)$enable;
 
         return $this;
     }

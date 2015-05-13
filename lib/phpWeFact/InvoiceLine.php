@@ -66,11 +66,6 @@ class InvoiceLine extends Invoice
     protected $Periods;
 
     /**
-     * Ignore the discount 0 is false, 1 is true;
-     */
-    protected $ignoreDiscount = 0;
-
-    /**
      * The period
      *
      * This can be d for daily, w for week, m for month, k for quarter,
@@ -369,26 +364,6 @@ class InvoiceLine extends Invoice
     public function setIdentifier($Identifier)
     {
         $this->Identifier = $Identifier;
-
-        return $this;
-    }
-
-    /**
-     * Gets the boolean set to ignore the discount module
-     * @return int
-     */
-    public function getIgnoreDiscount()
-    {
-        return $this->ignoreDiscount;
-    }
-
-    /**
-     * Sets the boolean to ignore the discount module
-     * @param bool $enable
-     */
-    public function setIgnoreDiscount(bool $enable)
-    {
-        $this->ignoreDiscount = (int)$enable;
 
         return $this;
     }

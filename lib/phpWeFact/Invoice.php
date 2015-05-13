@@ -212,9 +212,9 @@ class Invoice extends API
 
 
     /**
-     * 
+     * Ignore the discount 0 is false, 1 is true;
      */
-    protected $ignoreDiscount = false;
+    protected $ignoreDiscount = 0;
 
     /**
      * The constructor
@@ -1002,7 +1002,7 @@ class Invoice extends API
 
     /**
      * Gets the boolean set to ignore the discount module
-     * @return boolean
+     * @return int
      */
     public function getIgnoreDiscount()
     {
@@ -1015,7 +1015,7 @@ class Invoice extends API
      */
     public function setIgnoreDiscount(bool $enable)
     {
-        $this->ignoreDiscount = $enable;
+        $this->ignoreDiscount = (int)$enable;
 
         return $this;
     }
